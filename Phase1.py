@@ -1,3 +1,4 @@
+#Water-Jug Problem
 #Value the customer Input.
 #Initially getting the Optimum Solution's condition.
 #By Punit Shelar
@@ -95,13 +96,4 @@ if(bool(currentstatus) == False):
         optimumsolution(x, y)
 
 print("SuccessFul")
-
-
-
-
-
-
-
-
-
 
