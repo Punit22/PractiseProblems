@@ -24,14 +24,14 @@ int main()
 
     cout << "Enter Weights" << endl;
     for(int i=0;i<no;i++){
-        int x;
+        float x;
         cin >> x;
         w[i] = x;
     }
 
     cout << "Enter Profits" << endl;
     for(int i=0;i<no;i++){
-        int x;
+        float x;
         cin >> x;
         p[i] = x;
     }
@@ -87,13 +87,13 @@ int main()
     }
 
 
-    //Maximum Profit : r[i]p[i]
+    //Maximum Profit :
     float maxf = 0,maxw = 0;
     for(int i=0;i<no;i++){
         maxf = maxf + finalx[i]*p[i];
         maxw = maxw + finalx[i]*w[i];
     }
-    cout << "Max Profit : " << maxf << " Maximum Weight : " << maxw<< endl;
+    cout << "Max Profit : " << maxf <<endl<< " Maximum Weight : " << maxw<< endl;
 
     return 0;
 }
