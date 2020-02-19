@@ -95,6 +95,32 @@ class StringOperation{
 		System.out.println(result);
 		
 		}
+	
+	public static String sortString(String inputString) { 
+		char tempArray[] = inputString.toCharArray(); 
+		Arrays.sort(tempArray);
+		return new String(tempArray); 
+	} 
+
+	public void sortString2(int count,String [] str) { 
+				//int temp;
+		for (int i = 0; i < count; i++){
+			for (int j = i + 1; j < count; j++) { 
+				if (str[i].compareTo(str[j])>0) 
+				{
+				    String temp = str[i];
+				    str[i] = str[j];
+				    str[j] = temp;
+				}
+			    }
+			}
+
+			//Displaying the strings after sorting them based on alphabetical order
+		System.out.print("Strings in Sorted Order:");
+		for (int i = 0; i <= count - 1; i++) {
+			    System.out.print(str[i] + ", ");
+			}
+	}
 }
 
 
@@ -105,11 +131,11 @@ class prac6{
 		BufferedReader ob = new BufferedReader(new InputStreamReader(System.in));
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1.) Find string is palindrome or not \n2.) To compare two strings \n3.) Find number of occurrences of a substring within a string \n4.) To  replace substring with other string");
-		System.out.print("Select Option : ");
+		
+		System.out.print("1.) Find string is palindrome or not \n2.) To compare two strings \n3.) Find number of occurrences of a substring within a string \n4.) To  replace substring with other string \n5.) Delete \n6.) Sort data method1 \n6.) Sort data method2 \n");
+		System.out.println("Select Option : ");
 		int option = sc.nextInt();
-		
-		
+		sc.nextLine();
 		
 		switch(option){
 			case 1:
@@ -147,7 +173,27 @@ class prac6{
 				String d2 = sc.next();
 				so.delete(d1,d2);
 				break;
-				
+			case 6:
+				String inputString = "geeksforgeeks"; 
+				System.out.println(so.sortString(inputString)); 
+				break;
+			case 7:
+				System.out.print("Enter number of strings you would like to enter:");
+				int count = sc.nextInt();
+        
+        
+				String str[] = new String[count];
+				Scanner scan2 = new Scanner(System.in);
+        
+				//User is entering the strings and they are stored in an array
+				System.out.println("Enter the Strings one by one:");
+				for(int i = 0; i < count; i++){
+					str[i] = scan2.nextLine();
+				}
+				sc.close();
+				scan2.close();
+				so.sortString2(count,str);
+				break;
 		}
 	
 	}
